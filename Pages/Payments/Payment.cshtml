@@ -1,0 +1,59 @@
+@page
+@model AuctionSystem.Pages.Payments.PaymentModel
+@using AuctionSystem.Models
+
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Payment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+    <h2>Payment</h2>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>UserId</th>
+            <th>Amount</th>
+            <th>AuctionItemId</th>
+            <th>PaymentDate</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var payment in Model.Payments)
+    {
+        <tr>
+            <td>@payment.Id</td>
+            <td>@payment.UserId</td>
+            <td>@payment.Amount</td>
+            <td>@payment.AuctionItemId</td>
+            <td>@payment.PaymentDate</td>
+            <td>
+                <a asp-page="/Users/Edit" asp-route-id="@payment.UserId" class="btn btn-warning">Edit</a>
+                <a asp-page="/Users/Delete" asp-route-id="@payment.UserId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+    </table>
+<script>
+     window.addEventListener("load", function (event) {
+        fetch("https://localhost:5001/api/Payment/success")
+        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+        })
+  });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+@page
+@using System.Security.Claims
+@model AuctionSystem.Pages.UserProfileModel
+
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="text-center">
+    <h1 class="display-4">User Profile</h1>
+    <p><strong>Username:</strong> @(User.Identity?.Name ?? "N/A")</p>
+    <p><strong>Email:</strong> @(User?.FindFirst(ClaimTypes.Email)?.Value ?? "N/A")</p>
+    <p><strong>First Name:</strong> @(User?.FindFirst(ClaimTypes.GivenName)?.Value ?? "N/A")</p>
+    <p><strong>Last Name:</strong> @(User?.FindFirst(ClaimTypes.Surname)?.Value ?? "N/A")</p>
+</div>

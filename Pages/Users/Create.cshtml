@@ -1,0 +1,74 @@
+@page
+@model AuctionSystem.Pages.Users.CreateModel
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<h2>Create User</h2>
+
+<form method="post" id="createUserForm">
+    <div class="form-group">
+        <label asp-for="Input.Username" class="control-label">Username</label>
+        <input asp-for="Input.Username" class="form-control" id="Username" />
+        <span asp-validation-for="Input.Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Email" class="control-label">Email</label>
+        <input asp-for="Input.Email" class="form-control" id="Mail"/>
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Password" class="control-label">Password</label>
+        <input asp-for="Input.Password" class="form-control" id="Password" type="password" />
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.FirstName" class="control-label">FirstName</label>
+        <input asp-for="Input.FirstName" class="form-control" id="FirstN" />
+        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.LastName" class="control-label">LastName</label>
+        <input asp-for="Input.LastName" class="form-control" id="LastN"/>
+        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+    </div>
+    <button type="button" onclick="createUser()" class="btn btn-primary">Create</button>
+</form>
+
+<script>
+    const userName = document.getElementById("Username");
+    const lastName = document.getElementById("LastN");
+    const firstName = document.getElementById("FirstN");
+    const mail = document.getElementById("Mail");
+    const password = document.getElementById("Password");
+
+   const createUser = () => {
+    fetch("/api/UserApi", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            username: userName.value,
+            lastName: lastName.value,
+            firstName: firstName.value,
+            email: mail.value,
+            password: password.value,
+        })
+    })
+    .then(res => res.json())
+    .then(res => {
+        if (res.success) {
+            alert("User created successfully");
+            window.location.href = "/Users/Index"; // Redirect to the users list page
+        } else {
+            alert("Error creating user: " + res.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred while creating the user.");
+    });
+}
+
+</script>

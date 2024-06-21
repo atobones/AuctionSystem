@@ -1,0 +1,9 @@
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.csproj.AssemblyReference.cache
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.AssemblyInfoInputs.cache
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.AssemblyInfo.cs
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.csproj.CoreCompileInputs.cache
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.RazorAssemblyInfo.cache
+C:\Users\Macbook\Desktop\123\AuctionSystem\obj\Debug\net8.0\AuctionSystem.RazorAssemblyInfo.cs

@@ -1,0 +1,63 @@
+@page 
+@model AuctionSystem.Pages.LoginModel 
+@using AuctionSystem.Models
+@{ 
+    ViewData["Title"] = "Login"; 
+} 
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>@ViewData["Title"] - AuctionSystem</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+</head> 
+<body> 
+ 
+ <h2>Login</h2> 
+ 
+<div> 
+    <div class="form-group"> 
+        <label asp-for="Input.UserName"></label> 
+        <input id="userName" asp-for="Input.Username" class="form-control" /> 
+    </div> 
+    <div class="form-group"> 
+        <label asp-for="Input.Password"></label> 
+        <input id="password" asp-for="Input.Password" class="form-control" /> 
+    </div> 
+    <div class="form-group"> 
+        <div class="form-check"> 
+            <input asp-for="Input.RememberMe" class="form-check-input" /> 
+            <label asp-for="Input.RememberMe" class="form-check-label"></label> 
+        </div> 
+    </div> 
+    <button onClick="login()" class="btn btn-primary">Login</button> 
+</div> 
+ 
+<script> 
+const userName = document.getElementById("userName") 
+const password = document.getElementById("password") 
+    const login = () => { 
+        fetch("https://localhost:5001/api/Auth/login", { 
+            method: "POST", 
+            headers: { 
+                "Content-type": "application/json" 
+            }, 
+            body: json.stringify({ 
+               username: userName.value, 
+                password: password.value, 
+                email: "", 
+                rememberMe: false 
+            }) 
+        }).then(res => res.json()) 
+        .then(res => { 
+            if(res.accesse_token){ 
+              localStorage.setItem("token", res.accesse_token) 
+            } 
+        }) 
+    } 
+</script> 
+ 
+</body> 
+</html>

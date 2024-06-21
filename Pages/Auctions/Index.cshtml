@@ -1,0 +1,40 @@
+@model IEnumerable<AuctionSystem.Models.AuctionItem>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auctions - AuctionSystem</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Auctions</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Starting Bid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.StartingBid</td>
+                    <td>
+                        <a class="btn btn-primary" href="/Auctions/Details/@item.Id">Details</a>
+                        <a class="btn btn-warning" href="/Auctions/Edit/@item.Id">Edit</a>
+                        <a class="btn btn-danger" href="/Auctions/Delete/@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-success" href="/Auctions/Create">Create New Auction</a>
+</body>
+</html>

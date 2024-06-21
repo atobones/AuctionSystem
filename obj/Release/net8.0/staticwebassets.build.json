@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "dAPGWVT7RoxcyQ6RbD9TzwmUU+RlC3NJVH9DD5O3dzI=",
+  "Source": "AuctionSystem",
+  "BasePath": "_content/AuctionSystem",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AuctionSystem\\wwwroot",
+      "Source": "AuctionSystem",
+      "ContentRoot": "C:\\Users\\Macbook\\Desktop\\AuctionSystem\\wwwroot\\",
+      "BasePath": "_content/AuctionSystem",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Macbook\\Desktop\\AuctionSystem\\wwwroot\\script.js",
+      "SourceId": "AuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Macbook\\Desktop\\AuctionSystem\\wwwroot\\",
+      "BasePath": "_content/AuctionSystem",
+      "RelativePath": "script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\script.js"
+    },
+    {
+      "Identity": "C:\\Users\\Macbook\\Desktop\\AuctionSystem\\wwwroot\\style.css",
+      "SourceId": "AuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Macbook\\Desktop\\AuctionSystem\\wwwroot\\",
+      "BasePath": "_content/AuctionSystem",
+      "RelativePath": "style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style.css"
+    }
+  ]
+}
